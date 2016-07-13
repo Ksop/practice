@@ -1,0 +1,18 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Sedona</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  
+<header class="main-header">
+
+  <nav class="main-nav">
+    <ul class="main-nav__list">
+      <li><a href="#">Карта штата</a></li>
+      <li><a href="#">Информация</a></li>
+      <li><a href="#">Фото и видео</a></li>
+      <li><a href="#">Гостиницы</a></li>
+    </ul>
+
+    <a href="#" class="main-nav__icon-close"></a>
+  </nav>
+
+  <div class="logo">
+    <a href="#"><img src="img/logo-sedona@1x.png" alt="Sedona"></a>
+  </div>
+
+  <a href="#" class="main-nav-open"></a>
+
+</header>
+
+
+
+
+<main class="main-content">
+
+  <div class="intro-section">
+    <img src="img/text-welcome.svg" alt="Wellcome">
+    <img src="img/text-tothegorgeous.svg" alt="to the gorgeous">
+    <img src="img/text-sedona.svg" alt="Sedona">
+    <img src="img/text-becausecanyon.svg" alt="Because the Grand Canyon sucks!">
+    <div class="bottom-triangle  bottom-triangle--white"></div>
+  </div>
+
+
+
+  <div class="features">
+
+    <section class="section__title">
+
+      <h2>СЕДОНА — небольшой городок в АРИЗОНЕ, заслуживающий большего!</h2>
+
+      <p>Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</p>
+
+      <div class="bottom-triangle  bottom-triangle--blue"></div>
+
+    </section>
+
+
+    <section class="features__item">
+
+      <div class="features-item__title">
+        <h2>Настоящий городок</h2>
+        <p>№1</p>
+      </div>
+
+      <p class="features-item__descr">Седона не атракцион для туристов, там течет своя жизнь</p>
+
+      <div class="features-item__img">
+        <img src="img/photo-city@1x.jpg" alt="Sedona city">
+      </div>
+
+      <div class="features-item__list">
+
+        <ul>
+
+          <li>
+            <h3>Жилье</h3>
+            <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+          </li>
+
+          <li>
+            <h3>Сувениры</h3>
+            <p>Не только китайского, но и местного производства!</p>
+          </li>
+          
+          <li>
+            <h3>Еда</h3>
+            <p>Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
+          </li>
+
+        </ul>
+
+      </div>
+      <!-- features-item__list END -->
+
+    </section>
+    <!-- features-item END -->
+
+
+    <section class="features__item">
+
+      <div class="features-item__title">
+        <h2>Там есть мост дьявола</h2>
+        <p>№2</p>
+      </div>
+
+      <p class="features-item__descr">Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
+
+      <div class="features-item__img">
+        <img src="img/photo-bridge@1x.jpg" alt="Sedona bridge">
+      </div>
+
+    </section>
+    <!-- features-item END -->
+
+
+    <section class="features__item">
+
+      <div class="features-item__title">
+        <h2>Небольшая площадь</h2>
+        <p>№3</p>
+      </div>
+
+      <p class="features-item__descr">Все достопримечательности находятся очень близко</p>
+
+    </section>
+    <!-- features-item END -->
+
+
+    <section class="features__item">
+
+      <div class="features-item__title">
+        <h2>Красивая дорога</h2>
+        <p>№4</p>
+      </div>
+
+      <p class="features-item__descr">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
+
+    </section>
+    <!-- features-item END -->
+
+
+    <section class="features__item">
+
+      <div class="features-item__title">
+        <h2>Мало туристов</h2>
+        <p>№5</p>
+      </div>
+
+      <p class="features-item__descr">Большинство едет в гранд каньон и толпится там</p>
+
+    </section>
+    <!-- features-item END -->
+
+  </div>
+  <!-- features END -->
+
+
+
+  <div class="book">
+
+    <section class="section__title">
+
+      <h2>Заинтересовались?</h2>
+
+      <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
+
+    </section>
+
+
+    <section class="book__search">
+
+      <div class="book-search__title">
+        <h2>Поиск гостиницы в Седоне</h2>
+      </div>
+
+      <form action="" method="" class="book-search__form">
+        
+        <label for="checkin">Дата заезда:</label>
+        <input id="checkin" type="date">
+
+        <label for="checkout">Дата выезда:</label>
+        <input id="checkout" type="date">
+
+        <label for="adults">Взрослые:</label>
+        <input id="adults" type="text">
+
+        <label for="children">Дети:</label>
+        <input id="children" type="text">
+
+        <button type="submit" class="btn  btn-book-search">Найти</button>
+
+      </form>
+
+    </section>
+    <!-- book__search END -->
+
+  </div>
+  <!-- book END -->
+
+
+
+  <div class="map">
+
+  </div>
+
+</main>
+
+
+<footer class="main-footer">
+  
+  <h2>#visisedona</h2>
+
+  <div class="social-btns">
+    <ul class="social-btns__list">
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Youtube</a></li>
+    </ul>
+  </div>
+
+  <div class="copyrights">
+    <p>Website by</p>
+  </div>
+
+</footer>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
