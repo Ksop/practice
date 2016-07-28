@@ -15,24 +15,43 @@
 
 <body>
   
-<header class="main-header">
+<header class="page-header">
 
-  <nav class="main-nav">
-    <ul class="main-nav__list">
-      <li><a href="#">Карта штата</a></li>
-      <li><a href="#">Информация</a></li>
-      <li><a href="#">Фото и видео</a></li>
-      <li><a href="#">Гостиницы</a></li>
-    </ul>
+  <div class="page-header__nav-left">
 
-    <a href="#" class="main-nav__icon-close"></a>
-  </nav>
+    <nav class="main-nav">
 
-  <div class="logo">
-    <a href="#"><img src="img/logo-sedona@1x.png" alt="Sedona"></a>
+      <ul class="main-nav__list">
+        <li><a href="#">Карта штата</a></li>
+        <li><a href="#">Информация</a></li>
+      </ul>
+
+    </nav>
+
   </div>
 
-  <a href="#" class="main-nav-open"></a>
+
+  <div class="page-header__logo-wrap">
+    <a class="logo-link" href="#"><img src="img/logo-sedona@1x.png" alt="Sedona"></a>
+  </div>
+
+
+  <a href="#" class="page-header__open-nav"></a>
+  <a href="#" class="page-header__close-nav"></a>
+
+
+  <div class="page-header__nav-right">
+
+    <nav class="main-nav">
+
+      <ul class="main-nav__list">
+        <li><a href="#">Карта штата</a></li>
+        <li><a href="#">Информация</a></li>
+      </ul>
+
+    </nav>
+
+  </div>
 
 </header>
 
@@ -42,18 +61,19 @@
 <main class="main-content">
 
   <div class="intro-section">
-    <img src="img/text-welcome.svg" alt="Wellcome">
-    <img src="img/text-tothegorgeous.svg" alt="to the gorgeous">
-    <img src="img/text-sedona.svg" alt="Sedona">
-    <img src="img/text-becausecanyon.svg" alt="Because the Grand Canyon sucks!">
-    <div class="bottom-triangle  bottom-triangle--white"></div>
+
+    <img class="intro-section__welcome" src="img/text-welcome.svg" alt="Wellcome">
+    <img class="intro-section__gorgeous" src="img/text-tothegorgeous.svg" alt="to the gorgeous">
+    <img class="intro-section__text-sedona" src="img/text-sedona.svg" alt="Sedona">
+    <img class="intro-section__becausecanyon" src="img/text-becausecanyon.svg" alt="Because the Grand Canyon sucks!">
+
   </div>
 
 
 
   <div class="features">
 
-    <section class="section__title">
+    <section class="features__header">
 
       <h2>СЕДОНА — небольшой городок в АРИЗОНЕ, заслуживающий большего!</h2>
 
@@ -77,9 +97,9 @@
         <img src="img/photo-city@1x.jpg" alt="Sedona city">
       </div>
 
-      <div class="features-item__list">
+      <div class="features-item__list-wrap">
 
-        <ul>
+        <ul class="features-item__list">
 
           <li>
             <h3>Жилье</h3>
@@ -167,7 +187,7 @@
 
   <div class="book">
 
-    <section class="section__title">
+    <section class="book__header">
 
       <h2>Заинтересовались?</h2>
 
@@ -213,6 +233,8 @@
   </div>
 
 </main>
+
+
 
 
 <footer class="main-footer">
