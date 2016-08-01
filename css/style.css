@@ -1,12 +1,95 @@
 /* general styles 
 for body and typography */
 body {
-  font-size: 16px;
-  line-height: 25px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+  font-weight: normal;
+  font-style: normal;
 }
-header {
-  background: #000;
-  color: #222;
+.page-header {
+  background: #fff;
+  min-height: 56px;
+  position: relative;
+}
+.page-header__nav {
+  display: none;
+}
+.page-header__logo-wrap .logo-link {
+  position: relative;
+  display: block;
+  text-align: center;
+  z-index: 1;
+  width: 138px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page-header__logo-wrap .logo-link:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 138px;
+  height: 72px;
+  background: url(../../img/logo-sedona-bg.png) no-repeat;
+}
+.page-header__logo {
+  position: relative;
+  z-index: 1;
+  width: 67px;
+  height: 56px;
+}
+.page-header__open-nav {
+  display: block;
+  width: 23px;
+  height: 22px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.page-header__open-nav svg {
+  fill: #81b3d2;
+}
+.page-header__close-nav {
+  display: block;
+  width: 23px;
+  height: 22px;
+  position: absolute;
+  top: 17px;
+  right: 20px;
+}
+.page-header__close-nav svg {
+  fill: #fff;
+}
+.main-nav {
+  background-color: #81b3d2;
+}
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.main-nav__list li {
+  border-bottom: 1px solid #678fa8;
+  box-shadow: 0 1px 0 #9ac2db;
+}
+.main-nav__list li:last-child {
+  border: none;
+  box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+}
+.main-nav__list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-weight: bold;
 }
 .intro-section {
   color: #444;

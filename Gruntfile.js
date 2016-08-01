@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -26,16 +28,27 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['less/**/*.less'],
-        tasks: ['less']
+        tasks: ['less:dev']
+      }
+    },
+
+    browserSync: {
+      bsFiles: {
+        src : [
+          '*.html',
+          'css/*.css'
+        ]
+      },
+      options: {
+        watchTask: true,
+        server: '.'
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
 
   //Эти задания будут выполнятся сразу же когда вы в консоли напечатание grunt, и нажмете Enter
-  grunt.registerTask('default', ['less:dev']);
+  grunt.registerTask('default', ['browserSync','watch']);
   grunt.registerTask('build', ['less:build']);
 
 };

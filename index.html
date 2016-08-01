@@ -4,7 +4,7 @@
   <title>Sedona</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -17,48 +17,49 @@
   
 <header class="page-header">
 
-  <div class="page-header__nav-left">
+  <div class="page-header__nav">
 
     <nav class="main-nav">
 
       <ul class="main-nav__list">
         <li><a href="#">Карта штата</a></li>
         <li><a href="#">Информация</a></li>
+        <li><a href="#">Фото и видео</a></li>
+        <li><a href="#">Гостиницы</a></li>
       </ul>
 
     </nav>
 
+    <a href="#" class="page-header__close-nav">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.199 22.199">
+        <polygon points="22.199,2.804 19.396,0 11.1,8.297 2.804,0 0,2.803 8.297,11.1 0,19.396 2.803,22.199 11.1,13.902 19.396,22.199 
+        22.199,19.396 13.903,11.1 "/>
+      </svg>
+    </a>
+
   </div>
+  <!-- page-header__nav END -->
 
 
   <div class="page-header__logo-wrap">
-    <a class="logo-link" href="#"><img src="img/logo-sedona@1x.png" alt="Sedona"></a>
+    <a class="logo-link" href="#"><img class="page-header__logo" src="img/logo-sedona@1x.png" alt="Sedona"></a>
   </div>
 
 
-  <a href="#" class="page-header__open-nav"></a>
-  <a href="#" class="page-header__close-nav"></a>
-
-
-  <div class="page-header__nav-right">
-
-    <nav class="main-nav">
-
-      <ul class="main-nav__list">
-        <li><a href="#">Карта штата</a></li>
-        <li><a href="#">Информация</a></li>
-      </ul>
-
-    </nav>
-
-  </div>
+  <a href="#" class="page-header__open-nav">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.928 21.982">
+      <rect width="22.928" height="3.964"/>
+      <rect y="9.009" width="22.928" height="3.964"/>
+      <rect y="18.018" width="22.928" height="3.964"/>
+    </svg>
+  </a>
 
 </header>
 
 
 
 
-<main class="main-content">
+<!-- <main class="main-content">
 
   <div class="intro-section">
 
@@ -119,10 +120,10 @@
         </ul>
 
       </div>
-      <!-- features-item__list END -->
+      features-item__list END
 
     </section>
-    <!-- features-item END -->
+    features-item END
 
 
     <section class="features__item">
@@ -139,7 +140,7 @@
       </div>
 
     </section>
-    <!-- features-item END -->
+    features-item END
 
 
     <section class="features__item">
@@ -152,7 +153,7 @@
       <p class="features-item__descr">Все достопримечательности находятся очень близко</p>
 
     </section>
-    <!-- features-item END -->
+    features-item END
 
 
     <section class="features__item">
@@ -165,7 +166,7 @@
       <p class="features-item__descr">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
 
     </section>
-    <!-- features-item END -->
+    features-item END
 
 
     <section class="features__item">
@@ -178,10 +179,10 @@
       <p class="features-item__descr">Большинство едет в гранд каньон и толпится там</p>
 
     </section>
-    <!-- features-item END -->
+    features-item END
 
   </div>
-  <!-- features END -->
+  features END
 
 
 
@@ -221,10 +222,10 @@
       </form>
 
     </section>
-    <!-- book__search END -->
+    book__search END
 
   </div>
-  <!-- book END -->
+  book END
 
 
 
@@ -232,12 +233,12 @@
 
   </div>
 
-</main>
+</main> -->
 
 
 
 
-<footer class="main-footer">
+<!-- <footer class="main-footer">
   
   <h2>#visisedona</h2>
 
@@ -253,9 +254,10 @@
     <p>Website by</p>
   </div>
 
-</footer>
+</footer> -->
 
 
+  <script src="//localhost:35729/livereload.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
