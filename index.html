@@ -21,13 +21,14 @@
 
     <div class="page-header__nav">
 
-      <nav class="main-nav">
+      <nav class="main-nav  main-nav--closed">
 
-        <ul class="main-nav__list">
-          <li><a href="#">Карта штата</a></li>
-          <li><a href="#">Информация</a></li>
-          <li><a href="#">Фото и видео</a></li>
-          <li><a href="#">Гостиницы</a></li>
+        <ul class="main-nav__items">
+          <li class="main-nav__item"><a href="#">Карта штата</a></li>
+          <li class="main-nav__item"><a href="#">Информация</a></li>
+          <li class="main-nav__logo-wrap"><a class="logo-link" href="#"><img class="logo" src="img/logo-sedona@1x.png" alt="Sedona"></a></li>
+          <li class="main-nav__item"><a href="#">Фото и видео</a></li>
+          <li class="main-nav__item"><a href="#">Гостиницы</a></li>
         </ul>
 
       </nav>
@@ -44,7 +45,7 @@
 
 
     <div class="page-header__logo-wrap">
-      <a class="logo-link" href="#"><img class="page-header__logo" src="img/logo-sedona@1x.png" alt="Sedona"></a>
+      
     </div>
 
 
@@ -313,7 +314,7 @@
 
     <section class="page-title">
 
-      <h1>СЕДОНА&nbsp;—&nbsp;небольшой городок&nbsp;в&nbsp;АРИЗОНЕ, заслуживающий большего!</h1>
+      <h1>СЕДОНА&nbsp;—&nbsp;небольшой городок&nbsp;в&nbsp;АРИЗОНЕ,<br> заслуживающий большего!</h1>
 
       <p>Рассмотрим 5 причин, по&nbsp;которым Седона&nbsp;круче чем гранд каньон!</p>
 
@@ -327,10 +328,10 @@
       <section class="main-features__item">
 
         <div class="main-features__item-header  main-features__item-header--triangle">
-          <h2 class="main-features__item-title">Настоящий городок</h2>
+          <h2 class="main-features__item-title">Настоящий<br> городок</h2>
           <p class="main-features__item-number">№1</p>
 
-          <p class="main-features__item-descr">Седона не атракцион для туристов, там&nbsp;течет&nbsp;своя жизнь</p>
+          <p class="main-features__item-descr">Седона не атракцион для туристов, там течет своя жизнь</p>
         </div>
 
 
@@ -338,42 +339,43 @@
           <img src="img/photo-city@1x.jpg" alt="Sedona city">
         </div>
 
-        <div class="main-features__item-list-wrap">
-
-          <ul class="main-features__item-list">
-
-            <li>
-              <h3>Жилье</h3>
-              <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-            </li>
-
-            <li>
-              <h3>Сувениры</h3>
-              <p>Не только китайского, но и местного производства!</p>
-            </li>
-            
-            <li>
-              <h3>Еда</h3>
-              <p>Всегда заказывайте ФИРМЕННЫЙ&nbsp;БУРГЕР, Вы НЕ разочаруетесь!</p>
-            </li>
-
-          </ul>
-
-        </div>
-        <!-- features__item-list END -->
-
       </section>
       <!-- first item END -->
 
+
+      <div class="advantages">
+
+        <ul class="advantages__list">
+
+          <li class="advantages__list-item">
+            <h3>Жилье</h3>
+            <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+          </li>
+
+          <li class="advantages__list-item">
+            <h3>Сувениры</h3>
+            <p>Не только китайского, но и местного производства!</p>
+          </li>
+          
+          <li class="advantages__list-item">
+            <h3>Еда</h3>
+            <p>Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
+          </li>
+
+        </ul>
+
+      </div>
+      <!-- advantages END -->
+
       
       <!-- second item -->
-      <section class="main-features__item">
+      <section class="main-features__item  main-features__item--reverse">
 
         <div class="main-features__item-header">
-          <h2 class="main-features__item-title">Там есть мост дьявола</h2>
+          <h2 class="main-features__item-title">Там есть<br> мост дьявола</h2>
           <p class="main-features__item-number">№2</p>
 
-          <p class="main-features__item-descr">Да, по нему можно пройти! Если, конечно,&nbsp;вы&nbsp;осмелитесь</p>
+          <p class="main-features__item-descr">Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
         </div>
 
         <div class="main-features__item-img">
@@ -393,7 +395,7 @@
       <section class="features__item">
 
         <div class="features__item-header  features__item-header--small-padding  features__item-header--bg-grey">
-          <h2 class="features__item-title">Небольшая площадь</h2>
+          <h2 class="features__item-title">Небольшая<br> площадь</h2>
           <p class="features__item-number">№3</p>
 
           <p class="features__item-descr">Все достопримечательности находятся&nbsp;очень&nbsp;близко</p>
@@ -407,7 +409,7 @@
       <section class="features__item">
 
         <div class="features__item-header  features__item-header--small-padding  features__item-header--bg-grey">
-          <h2 class="features__item-title">Красивая дорога</h2>
+          <h2 class="features__item-title">Красивая<br> дорога</h2>
           <p class="features__item-number">№4</p>
 
           <p class="features__item-descr">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем&nbsp;НЕ&nbsp;СКУЧНО!</p>
@@ -421,7 +423,7 @@
       <section class="features__item">
 
         <div class="features__item-header  features__item-header--small-padding  features__item-header--bg-grey">
-          <h2 class="features__item-title">Мало туристов</h2>
+          <h2 class="features__item-title">Мало<br> туристов</h2>
           <p class="features__item-number">№5</p>
 
           <p class="features__item-descr">Большинство едет в гранд каньон и&nbsp;толпится там</p>

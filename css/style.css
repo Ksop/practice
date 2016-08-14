@@ -70,34 +70,6 @@ body {
   min-height: 56px;
   position: relative;
 }
-.page-header__nav {
-  display: none;
-}
-.page-header__logo-wrap .logo-link {
-  position: relative;
-  display: block;
-  text-align: center;
-  z-index: 1;
-  width: 138px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.page-header__logo-wrap .logo-link:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 138px;
-  height: 72px;
-  background: url(../../img/logo-sedona-bg.png) no-repeat;
-}
-.page-header__logo {
-  position: relative;
-  z-index: 1;
-  width: 67px;
-  height: 56px;
-}
 .page-header__open-nav {
   display: block;
   width: 23px;
@@ -114,39 +86,97 @@ body {
   width: 23px;
   height: 22px;
   position: absolute;
-  top: 17px;
+  top: 20px;
   right: 20px;
 }
 .page-header__close-nav svg {
   fill: #fff;
 }
-.main-nav {
-  background-color: #81b3d2;
+@media (min-width: 768px) {
+  .page-header__open-nav,
+  .page-header__close-nav {
+    display: none;
+  }
 }
-.main-nav__list {
+.main-nav__items {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.main-nav__list li {
-  border-bottom: 1px solid #678fa8;
-  box-shadow: 0 1px 0 #9ac2db;
-}
-.main-nav__list li:last-child {
-  border: none;
-  box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-.main-nav__list a {
+.main-nav__item a {
   text-decoration: none;
   text-transform: uppercase;
   display: block;
-  color: #fff;
-  font-size: 18px;
-  line-height: 1;
+  color: #000;
   padding-bottom: 20px;
   padding-top: 20px;
   font-weight: bold;
+}
+.main-nav__logo-wrap {
+  display: block;
+  order: 4;
+}
+@media (max-width: 767px) {
+  .main-nav--closed .main-nav__item {
+    display: none;
+  }
+  .main-nav--opened .main-nav__item {
+    display: block;
+  }
+  .main-nav__item {
+    border-bottom: 1px solid #678fa8;
+    box-shadow: 0 1px 0 #9ac2db;
+    background-color: #81b3d2;
+  }
+  .main-nav__item:last-child {
+    border: none;
+    box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .main-nav__item a {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav__items {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .main-nav--closed .main-nav__item {
+    display: block;
+  }
+  .main-nav__logo-wrap {
+    order: 0;
+  }
+}
+.logo-link {
+  position: relative;
+  display: block;
+  text-align: center;
+  z-index: 1;
+  width: 138px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo-link:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 138px;
+  height: 72px;
+  background: url(../../img/logo-sedona-bg.png) no-repeat;
+}
+.logo {
+  position: relative;
+  z-index: 1;
+  width: 67px;
+  height: 56px;
 }
 .intro-section {
   background: url(../../img/bg-intro-section.jpg) no-repeat;
@@ -243,12 +273,29 @@ body {
   margin-top: 0;
   margin-bottom: 35px;
 }
+.page-title h1 br {
+  display: none;
+}
 .page-title p {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 26px;
   font-weight: normal;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .page-title h1 {
+    font-size: 21px;
+  }
+  .page-title h1 br {
+    display: block;
+  }
+}
+.main-features__item {
+  display: flex;
+}
+.main-features__item--reverse {
+  flex-direction: row-reverse;
 }
 .main-features__item-header {
   padding: 55px 20px 40px;
@@ -257,6 +304,12 @@ body {
   background: #81b3d2;
   color: #fff;
   text-transform: uppercase;
+  /* 
+** Треугольник именно здесь потому, что
+** позади треугольника должен быть 
+** голубой фон, который есть у 
+** main-features__item-header 
+*/
 }
 .main-features__item-header--triangle:before {
   content: '';
@@ -284,8 +337,7 @@ body {
   font-weight: normal;
 }
 .main-features__item-descr {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0 auto;
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
@@ -303,53 +355,105 @@ body {
   height: 256px;
   min-width: 100%;
 }
-.main-features__item-list {
+@media (max-width: 767px) {
+  .main-features__item {
+    display: block;
+  }
+  .main-features__item-title br {
+    display: none;
+  }
+  .main-features__item-descr {
+    max-width: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .main-features__item-header--triangle:before {
+    display: none;
+  }
+  .main-features__item-header {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-features__item-descr {
+    width: 170px;
+  }
+  .main-features__item-img {
+    width: 66.6%;
+  }
+}
+@media (min-width: 1200px) {
+  .main-features__item-descr {
+    width: 260px;
+  }
+}
+.advantages__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   text-transform: uppercase;
-  padding: 40px 20px 40px 70px;
 }
-.main-features__item-list li {
-  margin-bottom: 27px;
-}
-.main-features__item-list li:last-child {
-  margin-bottom: 0;
-}
-.main-features__item-list h3 {
-  font-size: 16px;
-  line-height: 26px;
-  margin-bottom: 14px;
+.advantages__list h3 {
   margin-top: 0;
 }
-.main-features__item-list p {
-  font-size: 16px;
-  line-height: 21px;
+.advantages__list p {
   margin: 0;
+}
+@media (max-width: 767px) {
+  .advantages__list {
+    padding: 40px 20px 40px 70px;
+    display: block;
+  }
+  .advantages__list-item {
+    margin-bottom: 27px;
+  }
+  .advantages__list-item:last-child {
+    margin-bottom: 0;
+  }
+  .advantages__list-item h3 {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 14px;
+  }
+  .advantages__list-item p {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+@media (min-width: 768px) {
+  .advantages__list-item {
+    padding-top: 160px;
+    padding-bottom: 63px;
+    width: 33.3%;
+    text-align: center;
+  }
+  .advantages__list-item h3 {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+  .advantages__list-item p {
+    font-size: 14px;
+    line-height: 21px;
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .advantages__list-item p {
+    width: 75%;
+  }
 }
 .features {
   background: #eee;
 }
-.features__item {
-  position: relative;
-  padding: 29px 35px 29px 35px;
-}
-.features__item:last-child .features__item-header:after {
-  height: 0;
-}
 .features__item-header {
   text-align: center;
   text-transform: uppercase;
-}
-.features__item-header:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-  right: 20px;
-  width: auto;
-  height: 1px;
-  background: #d6d6d6;
 }
 .features__item-title {
   margin-top: 0;
@@ -365,11 +469,50 @@ body {
   font-weight: normal;
 }
 .features__item-descr {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0 auto;
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
+}
+@media (max-width: 767px) {
+  .features__item {
+    position: relative;
+    padding: 29px 35px 29px 35px;
+  }
+  .features__item:last-child .features__item-header:after {
+    height: 0;
+  }
+  .features__item-header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    height: 1px;
+    background: #d6d6d6;
+  }
+  .features__item-title br {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .features {
+    display: flex;
+    flex-direction: row;
+  }
+  .features__item {
+    width: 33.3%;
+    padding-top: 47px;
+    padding-bottom: 47px;
+  }
+  .features__item-title {
+    font-size: 21px;
+  }
+  .features__item-descr {
+    padding: 0 10px;
+    max-width: 270px;
+  }
 }
 .book__header {
   padding: 30px 20px;

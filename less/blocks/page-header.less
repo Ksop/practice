@@ -4,42 +4,6 @@
   position: relative;
 }
 
-.page-header__nav {
-  display: none;
-}
-
-.page-header__logo-wrap {
-
-  .logo-link {
-    position: relative;
-    display: block;
-    text-align: center;
-    z-index: 1;
-    width: 138px;
-    left: 50%;
-    transform: translateX(-50%);    
-  }
-
-  .logo-link:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 138px;
-    height: 72px;
-    background: url(../../img/logo-sedona-bg.png) no-repeat;
-  }
-
-}
-
-.page-header__logo {
-  position: relative;
-  z-index: 1;
-  width: 67px;
-  height: 56px;
-}
-
 .page-header__open-nav {
   display: block;
   width: 23px;
@@ -58,10 +22,17 @@
   width: 23px;
   height: 22px;
   position: absolute;
-  top: 17px;
+  top: 20px;
   right: 20px;
 
   svg {
     fill: #fff;
+  }
+}
+
+@media @tablet-width {
+  .page-header__open-nav,
+  .page-header__close-nav {
+    display: none;
   }
 }

@@ -1,3 +1,11 @@
+.main-features__item {
+  display: flex;
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
 .main-features__item-header {
   padding: 55px 20px 40px;
   position: relative;
@@ -6,6 +14,12 @@
   color: #fff;
   text-transform: uppercase;
 
+/* 
+** Треугольник именно здесь потому, что
+** позади треугольника должен быть 
+** голубой фон, который есть у 
+** main-features__item-header 
+*/
   &--triangle:before {
     content: '';
     position: absolute;
@@ -36,8 +50,7 @@
 }
 
 .main-features__item-descr {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0 auto;
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
@@ -58,32 +71,43 @@
   }
 }
 
-.main-features__item-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  padding: 40px 20px 40px 70px;
-
-  li {
-    margin-bottom: 27px;
+@media @mobile-width-only {
+  .main-features__item {
+    display: block;
   }
 
-  li:last-child {
-    margin-bottom: 0;
+  .main-features__item-title br {
+    display: none;
   }
 
-  h3 {
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 14px;
-    margin-top: 0;
+  .main-features__item-descr {
+    max-width: 280px;
+  }
+}
+
+@media @tablet-width {
+  .main-features__item-header--triangle:before { 
+    display: none;
+  }
+  
+  .main-features__item-header {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  p {
-    font-size: 16px;
-    line-height: 21px;
-    margin: 0;
+  .main-features__item-descr {
+    width: 170px;
   }
 
+  .main-features__item-img {
+    width: 66.6%;    
+  }
+}
+
+@media @desktop-width {
+  .main-features__item-descr {
+    width: 260px;
+  }
 }
