@@ -23,6 +23,14 @@ body {
   border: none;
   outline: none;
 }
+.btn:focus {
+  outline: none;
+  border: none;
+}
+.btn:active {
+  outline: none;
+  border: none;
+}
 .btn-search {
   background: #81b3d2;
   width: 100%;
@@ -514,8 +522,12 @@ body {
     max-width: 270px;
   }
 }
+.book {
+  padding-top: 30px;
+}
 .book__header {
-  padding: 30px 20px;
+  padding: 0 20px;
+  margin-bottom: 30px;
 }
 .book__header-title {
   margin-top: 0;
@@ -529,6 +541,7 @@ body {
 }
 .book__header-descr {
   margin-top: 0;
+  margin-bottom: 0;
   text-transform: uppercase;
   text-align: center;
   font-size: 14px;
@@ -536,13 +549,18 @@ body {
   font-weight: normal;
   color: #000;
 }
-.book__search-toggle {
+.book__search-link {
   padding: 30px 35px;
   background: #766357;
-}
-.book__search-link {
   display: block;
   text-decoration: none;
+  position: relative;
+  z-index: 4;
+}
+.book__search-link:focus,
+.book__search-link:active {
+  border: none;
+  outline: none;
 }
 .book__search-link h2 {
   text-transform: uppercase;
@@ -554,10 +572,15 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-.book__search-form-wrap {
+.book__search {
   background: #fff;
-  padding: 25px 20px 50px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 500ms ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+.book__search-form {
+  display: flex;
+  flex-direction: column;
 }
 .book__search-form label {
   font-size: 14px;
@@ -565,31 +588,91 @@ body {
   font-weight: bold;
   color: #000;
   text-transform: uppercase;
-  display: block;
-  margin-bottom: 6px;
-  padding-left: 15px;
 }
 .book__search-form input {
-  box-sizing: border-box;
   font-size: 14px;
-  line-height: 26px;
   font-weight: bold;
   color: #000;
   text-transform: uppercase;
-  padding: 8px 40px 8px 15px;
+  padding: 14px 40px 14px 15px;
   border: none;
   background: #eee;
-  margin-bottom: 22px;
-  display: block;
-  width: 100%;
+  box-sizing: border-box;
 }
-.adults-wrap {
-  float: left;
-  width: 115px;
+.book__search-form-guests-wrap {
+  display: flex;
+  justify-content: space-between;
 }
-.children-wrap {
-  float: right;
-  width: 115px;
+@media (max-width: 767px) {
+  .book__header-descr br {
+    display: none;
+  }
+  .book__search {
+    padding: 25px 20px 50px 20px;
+  }
+  .book__search-form label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  .book__search-form-date {
+    margin-bottom: 22px;
+  }
+  .book__search-form-date input {
+    width: 100%;
+  }
+  .book__search-form-guests-wrap {
+    margin-bottom: 45px;
+  }
+  .book__search-form-guests {
+    width: 40%;
+  }
+  .book__search-form-guests input {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .book {
+    width: 567px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60px;
+  }
+  .book__header-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .book__search {
+    position: absolute;
+    bottom: -419px;
+    width: 457px;
+    z-index: 3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 55px;
+  }
+  .book__search--closed {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -350px;
+  }
+  .book__search-form-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .book__search-form-date input {
+    width: 350px;
+  }
+  .book__search-form-guests-wrap {
+    margin-bottom: 55px;
+  }
+  .book__search-form-guests label {
+    margin-right: 32px;
+  }
+  .book__search-form-guests input {
+    width: 114px;
+  }
 }
 .map {
   position: relative;
@@ -619,7 +702,6 @@ body {
   padding-bottom: 25px;
 }
 .main-footer__title-wrap {
-  margin-bottom: 40px;
   text-align: center;
 }
 .main-footer__title {
@@ -631,7 +713,6 @@ body {
 }
 .main-footer__social-wrap {
   text-align: center;
-  margin-bottom: 40px;
 }
 .main-footer__copyright p {
   font-size: 14px;
@@ -641,4 +722,20 @@ body {
   color: #000;
   text-align: center;
   margin: 0;
+}
+@media (max-width: 767px) {
+  .main-footer__title-wrap {
+    margin-bottom: 40px;
+  }
+  .main-footer__social-wrap {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 100px;
+  }
 }

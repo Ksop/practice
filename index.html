@@ -4,13 +4,10 @@
   <title>Sedona</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -439,47 +436,49 @@
 
     <div class="book">
 
-      <section class="book__header">
+      <div class="book__header">
 
         <h2 class="book__header-title">Заинтересовались?</h2>
 
-        <p class="book__header-descr">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
+        <p class="book__header-descr">Укажите предполагаемые даты поездки<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
 
-      </section>
+      </div>
 
 
-      <section class="book__search">
+      <a href="#" class="book__search-link"><h2>Поиск гостиницы в Седоне</h2></a>
 
-        <div class="book__search-toggle">
-          <a href="#" class="book__search-link"><h2>Поиск гостиницы в Седоне</h2></a>
-        </div>
-        
-        <div class="book__search-form-wrap  clearfix">
-          <form action="" method="" class="book__search-form">
-            
+
+      <div class="book__search  book__search--closed">
+
+        <form action="" method="" class="book__search-form">
+          
+          <div class="book__search-form-date">
             <label for="checkin">Дата заезда:</label>
             <input id="checkin" type="text" placeholder="дд.мм.гггг">
+          </div>
 
+          <div class="book__search-form-date">
             <label for="checkout">Дата выезда:</label>
             <input id="checkout" type="text" placeholder="дд.мм.гггг">
-            
-            <div class="adults-wrap">
+          </div>
+
+          <div class="book__search-form-guests-wrap">
+            <div class="book__search-form-guests">
               <label for="adults">Взрослые:</label>
               <input id="adults" type="text">
             </div>
 
-            <div class="children-wrap">
+            <div class="book__search-form-guests">
               <label for="children">Дети:</label>
               <input id="children" type="text">
             </div>
+          </div>
 
-            <button type="submit" class="btn  btn-search">Найти</button>
+          <button type="submit" class="btn  btn-search">Найти</button>
 
-          </form>
-        </div>
-        <!-- search form wrap end -->
+        </form>
 
-      </section>
+      </div>
       <!-- book__search END -->
 
     </div>
