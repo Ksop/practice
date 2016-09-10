@@ -79,16 +79,27 @@
     font-weight: bold;
     color: #000;
     text-transform: uppercase;
-    padding: 14px 40px 14px 15px; 
     border: none;
     background: @grey;
     box-sizing: border-box;
   }
 }
 
+.book__search-form-date input {
+  padding: 14px 40px 14px 15px;
+}
+
 .book__search-form-guests-wrap {
   display: flex;
   justify-content: space-between;
+}
+
+.book__search-form-guests input {
+  width: 38px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -124,11 +135,7 @@
   }
 
   .book__search-form-guests {
-    width: 40%;
-
-    input {
-      width: 100%;
-    }
+    width: 114px;
   }
 
 }
@@ -148,7 +155,7 @@
 
   .book__search {
     position: absolute;
-    bottom: -419px;
+    bottom: -435px;
     width: 457px;
     z-index: 3;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -181,10 +188,6 @@
   .book__search-form-guests {
     label {
       margin-right: 32px;
-    }
-
-    input {
-      width: 114px;
     }
   }
 }

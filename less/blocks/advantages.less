@@ -14,6 +14,11 @@
   p {
     margin: 0;
   }
+
+}
+
+.advantages__item-img svg {
+  fill: @lightblue;
 }
 
 @media @mobile-width-only {
@@ -25,6 +30,7 @@
 
   .advantages__list-item {
     margin-bottom: 27px;
+    position: relative;
 
     &:last-child {
       margin-bottom: 0;
@@ -42,12 +48,23 @@
     }
   }
 
+  .advantages__item-img {
+    position: absolute;
+    left: -47px;
+    top: -10px;
+
+    svg {
+      width: 37px;
+      height: 37px;
+    }
+  }
+
 }
 
 @media @tablet-width {
 
   .advantages__list-item {
-    padding-top: 160px;
+    padding-top: 60px;
     padding-bottom: 63px;
     width: 33.3%;
     text-align: center;
@@ -64,6 +81,10 @@
       width: 65%;
       margin: 0 auto;
     }
+  }
+
+  .advantages__item-img {
+    margin-bottom: 30px;
   }
 
 }

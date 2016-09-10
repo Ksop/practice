@@ -7,8 +7,9 @@
   var toggleSearchForm = document.querySelector(".book__search-link");
   var bookSearchForm = document.querySelector(".book__search");
 
-  toggleNav.addEventListener("click", function(e) {
+  var map = document.querySelector("#map");
 
+  toggleNav.addEventListener("click", function(e) {
     e.preventDefault();
 
     if ( mainNav.classList.contains("main-nav--closed") ) {
@@ -18,28 +19,39 @@
       mainNav.classList.remove("main-nav--opened");
       mainNav.classList.add("main-nav--closed");
     }
-
   });
 
   closeNav.addEventListener("click", function(e) {
-
     e.preventDefault();
 
     if ( mainNav.classList.contains("main-nav--opened") ) {
       mainNav.classList.remove("main-nav--opened");
       mainNav.classList.add("main-nav--closed");
     }
-
   });
 
   toggleSearchForm.addEventListener("click", function(e) {
-
     e.preventDefault();
 
-    // if ( bookSearchForm.classList.contains("book__search--closed") ) {
       bookSearchForm.classList.toggle("book__search--closed");
-    // }
-
   });
+
+  map.addEventListener('click', function(){
+    document.querySelector("#map iframe").classList.remove('scroll-off');
+  });
+
+  map.addEventListener('mouseleave', function(){
+    document.querySelector("#map iframe").classList.add('scroll-off');
+  });  
+
+  // var map = $('#map');
+
+  // map.on('click', function() {
+  //   $('#map iframe').removeClass('scroll-off');
+  // });
+
+  // $('#map').mouseleave(function () {
+  //   $('#map iframe').addClass('scroll-off');
+  // });
 
 })();

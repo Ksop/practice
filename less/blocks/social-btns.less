@@ -16,10 +16,18 @@
   }
 
   a {
-    display: block;
+    display: flex;// центруем иконки внутри блока
+    justify-content: center;
+    align-items: center;
     width: 46px;
     height: 48px;
     background: @lightblue;
     font-size: 0;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
   }
 }

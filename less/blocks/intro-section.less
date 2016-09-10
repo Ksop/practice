@@ -1,5 +1,6 @@
 .intro-section {
-  background: url(../../img/bg-intro-section.jpg) no-repeat;
+  background-image: url(../img/bg-intro-section.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   padding: 47px 20px 48px 20px;
@@ -11,7 +12,7 @@
     left: 0;
     width: 100%;
     height: 36px;
-    background: url(../../img/intro-triangle.svg) no-repeat;
+    background: url(../img/intro-triangle.svg) no-repeat;
     background-size: auto;
     background-position: center bottom;
   }
@@ -96,5 +97,12 @@
 @media (min-width:1024px ) {
   .intro-section:after {
     background-size: 100% 100%;
+  }
+}
+
+@media @retina {
+  .intro-section {
+    background-image: url(../img/bg-intro-section@2x.jpg);
+    background-repeat: no-repeat;
   }
 }
