@@ -6,32 +6,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    svgmin: {
-      options: {
-        plugins: [
-            {
-              removeViewBox: false
-            }, {
-              removeUselessStrokeAndFill: false
-            }, {
-              removeAttrs: {
-                  attrs: ['xmlns:xlink']
-              }
-            }
-        ]
-      },
-      dist: {
-        files: [{               // Dictionary of files
-          expand: true,       // Enable dynamic expansion.
-          cwd: '_src/',     // Src matches are relative to this path.
-          src: ['*.svg'],  // Actual pattern(s) to match.
-          dest: '_src/svg-sprite/',       // Destination path prefix.
-          ext: '.min.svg'     // Dest filepaths will have this extension.
-          // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
-        }]
-      }
-    },
-
     svgstore: {
       options: {
         svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG 
@@ -41,26 +15,54 @@ module.exports = function(grunt) {
       },
       default : {
         files: {
-          'img/icon-sprite.svg': ['_src/svg-sprite/*.svg'],
+          'build/img/icon-sprite.svg': ['img/icons/svg-sprite/*.svg'],
         }
       }
     },
 
-    less: {
-      dev: {
-        options: {
-          paths: ['less/']
-        },
-        files: {
-          'css/style.css': 'less/style.less'
-        }
+
+    svgmin: {
+      options: {
+        plugins: [
+          { removeViewBox: false }, 
+          { removeUselessStrokeAndFill: false }, 
+          { removeAttrs: 
+            { attrs: ['xmlns:xlink'] }
+          }
+        ]
       },
-      build: {
+      dist: {
+        files: [{               // Dictionary of files
+          expand: true,       // Enable dynamic expansion.
+          cwd: 'build/img',     // Src matches are relative to this path.
+          src: ['*.svg'],  // Actual pattern(s) to match.
+          dest: 'build/img/'      // Destination path prefix.
+          //ext: '.min.svg'     // Dest filepaths will have this extension.
+          // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+        }]
+      }
+    },
+
+
+    imagemin: {
+      images: {     
         options: {
-          compress: true
+          optimizationLevel: 3
         },
+        files: [{
+          expand: true,                  // Enable dynamic expansion 
+          cwd: 'build/img',                   // Src matches are relative to this path 
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
+          dest: 'build/img/'                  // Destination path prefix 
+        }]
+      }
+    },
+
+
+    less: {
+      style: {
         files: {
-          'css/style.min.css': 'less/style.less'
+          'build/css/style.css': 'less/style.less'
         }
       }
     },
@@ -69,44 +71,108 @@ module.exports = function(grunt) {
       options: {
         processors: [
           require('autoprefixer')({
-              browsers: ['last 2 versions']
+            browsers: ['last 2 versions']
           })
         ]
       },
       dist: {
-        src: 'css/*.css'
+        src: 'build/css/*.css'
       }
     },
 
+    css_mqpacker: {
+      main: {
+        options: {
+          sort: true
+        },
+        expand: true,
+        cwd: 'build/css/',
+        src: 'style.css',
+        dest: 'build/css/'
+      }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'build/css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'build/css',
+          ext: '.min.css'
+        }]
+      }
+    },
+
+    copy: {
+      build: {
+        files: [{
+          expand: true,
+          src: [
+            'fonts/**',
+            'img/**',
+            'js/**',
+            '*.html'
+          ],
+          dest: 'build/'
+        }]
+      },
+      html: {
+        files: [{
+          expand: true,
+          src: ['*.html'],
+          dest: 'build/'
+        }]
+      }
+    },
+
+    clean: {
+      build: ['build']
+    },
+
     watch: {
+      html: {
+        files: ['*.html'],
+        tasks: ['copy:html']
+      },
       css: {
         files: ['less/**/*.less'],
-        tasks: ['less:dev', 'postcss']
+        tasks: ['less', 'postcss', 'css_mqpacker', 'cssmin']
       },
       svg: {
-        files: ['_src/*.svg'],
-        tasks: ['svgmin', 'svgstore']
+        files: ['img/icons/svg-sprite/*.svg'],
+        tasks: ['svgsprite']
       }
     },
 
     browserSync: {
       bsFiles: {
         src : [
-          '*.html',
-          'css/*.css',
-          'js/*.js'
+          'build/*.html',
+          'build/css/*.css',
+          'build/js/*.js'
         ]
       },
       options: {
         watchTask: true,
-        server: '.'
+        server: 'build/'
       }
     }
   });
 
 
   //Эти задания будут выполнятся сразу же когда вы в консоли напечатание grunt, и нажмете Enter
-  grunt.registerTask('default', ['browserSync','watch']);
-  grunt.registerTask('build', ['less:build']);
+  grunt.registerTask('server', ['browserSync','watch']);
+  grunt.registerTask('svgsprite', ['svgmin','svgstore']);
+  grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'less', 
+    'postcss', 
+    'css_mqpacker', 
+    'cssmin', 
+    'svgsprite',
+    'imagemin'
+  ]);
 
 };
