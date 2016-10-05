@@ -4,9 +4,7 @@
   var toggleNav = document.querySelector(".page-header__open-nav");
   var closeNav = document.querySelector(".page-header__close-nav");
 
-  var toggleSearchForm = document.querySelector(".book__search-link");
-  var bookSearchForm = document.querySelector(".book__search");
-
+ 
   var map = document.querySelector("#map");
 
   toggleNav.addEventListener("click", function(e) {
@@ -30,11 +28,71 @@
     }
   });
 
+
+
+  var toggleSearchForm = document.querySelector(".booking__search-link");
+
   toggleSearchForm.addEventListener("click", function(e) {
     e.preventDefault();
-
-      bookSearchForm.classList.toggle("book__search--closed");
+    var bookSearchForm = document.querySelector(".booking__search");
+    
+    bookSearchForm.classList.toggle("booking__search--closed");
   });
+
+
+
+  //"+" and "-" buttons for adult counter and children counter
+  var adultBtnMinus = document.querySelector('.js-adult-btn-minus');
+  var adultBtnPlus = document.querySelector('.js-adult-btn-plus');
+  var childrenBtnMinus = document.querySelector('.js-children-btn-minus');
+  var childrenBtnPlus = document.querySelector('.js-children-btn-plus');
+
+  function manCounter(operation, manType) {
+
+    var input = document.getElementById(manType);
+
+    if(isNaN(input.value) || input.value < 0) 
+      input.value = 0;
+
+    if (operation == "plus") {      
+      input.value++;     
+      return input.setAttribute('value', input.value);      
+    } 
+    else {      
+      if (input.value - 1 >= 0) 
+        input.value--;      
+
+      return input.setAttribute('value', input.value);
+    }
+
+  }
+
+  /* 
+  так как у нас 2 счетчика - для взрослых и для детей,
+  то при вызове manCounter, передаем в качестве параметров
+  операцию и идентификатор нужного нам инпута.
+  */
+  adultBtnMinus.addEventListener('click', function(e) {
+    e.preventDefault();
+    return manCounter('minus', 'adults');
+  });
+
+  adultBtnPlus.addEventListener('click', function(e) {
+    e.preventDefault();
+    return manCounter('plus', 'adults');
+  });
+
+  childrenBtnPlus.addEventListener('click', function(e) {
+    e.preventDefault();
+    return manCounter('plus', 'children');
+  });
+
+  childrenBtnMinus.addEventListener('click', function(e) {
+    e.preventDefault();
+    return manCounter('minus', 'children');
+  });
+
+
 
   map.addEventListener('click', function(){
     document.querySelector("#map iframe").classList.remove('scroll-off');
@@ -42,16 +100,6 @@
 
   map.addEventListener('mouseleave', function(){
     document.querySelector("#map iframe").classList.add('scroll-off');
-  });  
-
-  // var map = $('#map');
-
-  // map.on('click', function() {
-  //   $('#map iframe').removeClass('scroll-off');
-  // });
-
-  // $('#map').mouseleave(function () {
-  //   $('#map iframe').addClass('scroll-off');
-  // });
+  });
 
 })();

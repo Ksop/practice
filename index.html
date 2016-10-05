@@ -507,62 +507,65 @@
 
 
 
-    <div class="book">
+    <div class="booking">
 
-      <div class="book__header">
+      <div class="booking__header">
 
-        <h2 class="book__header-title">Заинтересовались?</h2>
+        <h2 class="booking__header-title">Заинтересовались?</h2>
 
-        <p class="book__header-descr">Укажите предполагаемые даты поездки<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
+        <p class="booking__header-descr">Укажите предполагаемые даты поездки<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
 
       </div>
 
 
-      <a href="#" class="book__search-link"><h2>Поиск гостиницы в Седоне</h2></a>
+      <a href="#" class="booking__search-link"><h2>Поиск гостиницы в Седоне</h2></a>
 
 
-      <div class="book__search  book__search--closed">
-
-        <form action="" method="" class="book__search-form">
+      <div class="booking__search  booking__search--closed">
+      
+        <!-- BOOKING SEARCH FORM -->
+        <form action="" method="" class="booking__search-form">
           
-          <div class="book__search-form-date">
+          <div class="booking__search-form-date">
             <label for="checkin">Дата заезда:</label>
             <input id="checkin" type="text" placeholder="дд.мм.гггг">
           </div>
 
-          <div class="book__search-form-date">
+          <div class="booking__search-form-date">
             <label for="checkout">Дата выезда:</label>
             <input id="checkout" type="text" placeholder="дд.мм.гггг">
           </div>
 
-          <div class="book__search-form-guests-wrap">
+          <div class="booking__search-form-guests-wrap">
 
-            <div class="book__search-form-guests">
+            <div class="booking__search-form-guests">
               <label for="adults">Взрослые:</label>
 
               <div class="counter">
-                <span class="counter__btn">
+                <span class="counter__btn  js-adult-btn-minus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="1.917px" viewBox="0 0 9.917 1.917">
                     <rect width="9.917" height="1.917"/>
                   </svg>  
                 </span>
 
-                <input id="adults" type="text" value="0">
+                <input id="adults" type="text" value="1">
 
-                <span class="counter__btn  counter__btn-plus">
+                <span class="counter__btn  js-adult-btn-plus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="9.917px" viewBox="0 0 9.917 9.917">
                     <polygon points="9.917,4 5.917,4 5.917,0 4,0 4,4 0,4 0,5.917 4,5.917 4,9.917 5.917,9.917 5.917,5.917 9.917,5.917 "/>
                   </svg>
                 </span>  
               </div>
+              <!-- counter END -->
+
             </div>
             <!-- search-form-guest end -->
 
-            <div class="book__search-form-guests">
+            <div class="booking__search-form-guests">
               <label for="children">Дети:</label>
 
               <div class="counter">
-                <span class="counter__btn  counter__btn-minus">
+                <span class="counter__btn  js-children-btn-minus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="1.917px" viewBox="0 0 9.917 1.917">
                     <rect width="9.917" height="1.917"/>
                   </svg>  
@@ -570,12 +573,14 @@
 
                 <input id="children" type="text" value="0">
 
-                <span class="counter__btn  counter__btn-plus">
+                <span class="counter__btn  js-children-btn-plus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="9.917px" viewBox="0 0 9.917 9.917">
                     <polygon points="9.917,4 5.917,4 5.917,0 4,0 4,4 0,4 0,5.917 4,5.917 4,9.917 5.917,9.917 5.917,5.917 9.917,5.917 "/>
                   </svg>
                 </span>
               </div>
+              <!-- counter END -->
+
             </div>
             <!-- search-form-guest end -->
 

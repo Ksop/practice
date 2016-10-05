@@ -1,13 +1,13 @@
-.book {
+.bookinging {
   padding-top: 30px;
 }
 
-.book__header {
+.bookinging__header {
   padding: 0 20px;
   margin-bottom: 30px;
 }
 
-.book__header-title {
+.booking__header-title {
   margin-top: 0;
   margin-bottom: 25px;
   text-transform: uppercase;
@@ -18,7 +18,7 @@
   color: #000;
 }
 
-.book__header-descr {
+.booking__header-descr {
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -29,7 +29,7 @@
   color: #000;
 }
 
-.book__search-link {
+.booking__search-link {
   padding: 30px 35px;
   background: @brown;
   display: block;
@@ -55,14 +55,14 @@
   }
 }
 
-.book__search {
+.booking__search {
   background: #fff;
   transition: all 500ms ease-in-out;
   opacity: 1;
   visibility: visible;
 }
 
-.book__search-form {
+.booking__search-form {
   display: flex;
   flex-direction: column;
 
@@ -76,53 +76,60 @@
 
   input {
     font-size: 14px;
+    line-height: 21px;
     font-weight: bold;
     color: #000;
     text-transform: uppercase;
     border: none;
     background: @grey;
     box-sizing: border-box;
+
+    &:hover {
+      background-color: #ebebeb;
+    }
+
+    &:focus {
+      outline: 2px solid #e5e5e5;
+      background-color: #fff;
+    }
   }
 }
 
-.book__search-form-date input {
+.booking__search-form-date input {
   padding: 14px 40px 14px 15px;
 }
 
-.book__search-form-guests-wrap {
+.booking__search-form-guests-wrap {
   display: flex;
   justify-content: space-between;
 }
 
-.book__search-form-guests input {
+.booking__search-form-guests input {
   width: 38px;
   text-align: center;
   box-sizing: border-box;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 9px;
+  padding-bottom: 8px;
 }
 
 
 @media @mobile-width-only {
-  .book__header-descr {
+  .booking__header-descr {
     br {
       display: none;
     }
   }
 
-  .book__search {
+  .booking__search {
     padding: 25px 20px 50px 20px;
   }
 
-  .book__search-form {
-
-    label {
-      margin-bottom: 10px;
-      display: block;
-    }
+  .booking__search-form label {
+    margin-bottom: 10px;
+    display: block;
   }
 
-  .book__search-form-date {
+  .booking__search-form-date {
     margin-bottom: 22px;
 
     input {
@@ -130,30 +137,30 @@
     }
   }
 
-  .book__search-form-guests-wrap {
+  .booking__search-form-guests-wrap {
     margin-bottom: 45px;
   }
 
-  .book__search-form-guests {
+  .booking__search-form-guests {
     width: 114px;
   }
 
 }
 
 @media @tablet-width {
-  .book {
+  .booking {
     width: 567px;
     margin: 0 auto;
     position: relative;
     padding-top: 60px;
   }
 
-  .book__header-title {
+  .booking__header-title {
     font-size: 30px;
     margin-bottom: 30px;
   }
 
-  .book__search {
+  .booking__search {
     position: absolute;
     bottom: -435px;
     width: 457px;
@@ -170,7 +177,7 @@
     }
   }
 
-  .book__search-form-date {
+  .booking__search-form-date {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -181,13 +188,7 @@
     }
   }
 
-  .book__search-form-guests-wrap {
+  .booking__search-form-guests-wrap {
     margin-bottom: 55px;
-  }
-
-  .book__search-form-guests {
-    label {
-      margin-right: 32px;
-    }
   }
 }

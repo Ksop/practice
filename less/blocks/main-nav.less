@@ -16,6 +16,15 @@
     padding-bottom: 20px;
     padding-top: 20px;
     font-weight: bold;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: @lightblue;
+    }
+
+    &:active {
+      color: @grey;
+    }
   }
 }
 
@@ -50,6 +59,15 @@
       color: #fff;
       font-size: 18px;
       line-height: 1;
+    }
+
+    &:hover {
+      background-color: darken(@lightblue, 10%);
+    }
+
+    &:hover {
+      background-color: darken(@lightblue, 15%);
+      color: rgba(255, 255, 255, 0.3)
     }
   }
 
