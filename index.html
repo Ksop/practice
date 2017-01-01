@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.min.css">
 
-  <script src="js/jquery-2.1.4.min.js"></script>
+  <!-- <script src="js/jquery-2.1.4.min.js"></script> -->
 </head>
 
 <body>
@@ -524,7 +524,7 @@
       <div class="booking__search  booking__search--closed">
       
         <!-- BOOKING SEARCH FORM -->
-        <form action="" method="" class="booking__search-form">
+        <form class="booking__search-form">
           
           <div class="booking__search-form-date">
             <label for="checkin">Дата заезда:</label>
@@ -542,7 +542,7 @@
               <label for="adults">Взрослые:</label>
 
               <div class="counter">
-                <span class="counter__btn  js-adult-btn-minus">
+                <span class="counter__btn" data-operation="minus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="1.917px" viewBox="0 0 9.917 1.917">
                     <rect width="9.917" height="1.917"/>
                   </svg>  
@@ -550,7 +550,7 @@
 
                 <input id="adults" type="text" value="1">
 
-                <span class="counter__btn  js-adult-btn-plus">
+                <span class="counter__btn" data-operation="plus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="9.917px" viewBox="0 0 9.917 9.917">
                     <polygon points="9.917,4 5.917,4 5.917,0 4,0 4,4 0,4 0,5.917 4,5.917 4,9.917 5.917,9.917 5.917,5.917 9.917,5.917 "/>
                   </svg>
@@ -565,7 +565,7 @@
               <label for="children">Дети:</label>
 
               <div class="counter">
-                <span class="counter__btn  js-children-btn-minus">
+                <span class="counter__btn" data-operation="minus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="1.917px" viewBox="0 0 9.917 1.917">
                     <rect width="9.917" height="1.917"/>
                   </svg>  
@@ -573,7 +573,7 @@
 
                 <input id="children" type="text" value="0">
 
-                <span class="counter__btn  js-children-btn-plus">
+                <span class="counter__btn" data-operation="plus">
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="9.917px" height="9.917px" viewBox="0 0 9.917 9.917">
                     <polygon points="9.917,4 5.917,4 5.917,0 4,0 4,4 0,4 0,5.917 4,5.917 4,9.917 5.917,9.917 5.917,5.917 9.917,5.917 "/>
                   </svg>
@@ -587,7 +587,7 @@
           </div>
           <!-- search-form-guests-wrap end -->
 
-          <button type="submit" class="btn  btn-search">Найти</button>
+          <span class="btn  btn-search">Найти</span>
 
         </form>
 
@@ -595,7 +595,7 @@
       <!-- book__search END -->
 
     </div>
-    <!-- book END -->
+    <!-- booking END -->
 
 
 

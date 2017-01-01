@@ -1,11 +1,9 @@
 (function() {
+  'use strict';
 
   var mainNav = document.querySelector(".main-nav");
   var toggleNav = document.querySelector(".page-header__open-nav");
   var closeNav = document.querySelector(".page-header__close-nav");
-
- 
-  var map = document.querySelector("#map");
 
   toggleNav.addEventListener("click", function(e) {
     e.preventDefault();
@@ -30,69 +28,49 @@
 
 
 
-  var toggleSearchForm = document.querySelector(".booking__search-link");
+  (function() {
+    var formToggler = document.querySelector(".booking__search-link");
+    var formContainer = document.querySelector(".booking__search");
 
-  toggleSearchForm.addEventListener("click", function(e) {
-    e.preventDefault();
-    var bookSearchForm = document.querySelector(".booking__search");
+    formToggler.addEventListener("click", function(e) {
+      e.preventDefault();
+      formContainer.classList.toggle("booking__search--closed");
+    });
     
-    bookSearchForm.classList.toggle("booking__search--closed");
-  });
 
+    formContainer.addEventListener('click', setInputVal);
 
+    function setInputVal(e) {
+      var target = e.target;
+      var operation;
+      var input;
 
-  //"+" and "-" buttons for adult counter and children counter
-  var adultBtnMinus = document.querySelector('.js-adult-btn-minus');
-  var adultBtnPlus = document.querySelector('.js-adult-btn-plus');
-  var childrenBtnMinus = document.querySelector('.js-children-btn-minus');
-  var childrenBtnPlus = document.querySelector('.js-children-btn-plus');
+      while(target.className !== 'booking__search') {
+        if (target.className === 'counter__btn') { break; }
+        target = target.parentNode;
+      }
 
-  function manCounter(operation, manType) {
+      if (target.className === 'booking__search') { return; }
 
-    var input = document.getElementById(manType);
+      operation = target.dataset.operation;
+      input = target.parentNode.querySelector('input');
 
-    if(isNaN(input.value) || input.value < 0) 
-      input.value = 0;
+      if(isNaN(input.value) || input.value < 0){
+        input.value = 0;
+      }
 
-    if (operation == "plus") {      
-      input.value++;     
-      return input.setAttribute('value', input.value);      
-    } 
-    else {      
-      if (input.value - 1 >= 0) 
-        input.value--;      
-
-      return input.setAttribute('value', input.value);
+      if (operation === 'plus') {
+        input.value = +input.value + 1;
+      } else {
+        if (input.value - 1 >= 0) 
+          input.value = +input.value - 1;       
+      }
     }
-
-  }
-
-  /* 
-  так как у нас 2 счетчика - для взрослых и для детей,
-  то при вызове manCounter, передаем в качестве параметров
-  операцию и идентификатор нужного нам инпута.
-  */
-  adultBtnMinus.addEventListener('click', function(e) {
-    e.preventDefault();
-    return manCounter('minus', 'adults');
-  });
-
-  adultBtnPlus.addEventListener('click', function(e) {
-    e.preventDefault();
-    return manCounter('plus', 'adults');
-  });
-
-  childrenBtnPlus.addEventListener('click', function(e) {
-    e.preventDefault();
-    return manCounter('plus', 'children');
-  });
-
-  childrenBtnMinus.addEventListener('click', function(e) {
-    e.preventDefault();
-    return manCounter('minus', 'children');
-  });
+  })();
 
 
+
+  var map = document.querySelector("#map");
 
   map.addEventListener('click', function(){
     document.querySelector("#map iframe").classList.remove('scroll-off');
